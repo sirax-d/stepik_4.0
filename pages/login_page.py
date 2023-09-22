@@ -1,5 +1,6 @@
 from .base_page import BasePage
 from .locators import LoginPageLocators
+from .locators import BasePageLocators
 
 class LoginPage(BasePage):
     def should_be_login_page(self):
@@ -18,3 +19,6 @@ class LoginPage(BasePage):
     def should_be_register_form(self):
         # реализуйте проверку, что есть форма регистрации на странице
         assert self.is_element_present(*LoginPageLocators.registration_form), "Button Registration is not exist"
+
+    def should_be_login_page(self):
+        assert self.is_element_present(*BasePageLocators.LOGIN_PAGE_CHECK)
